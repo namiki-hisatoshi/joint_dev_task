@@ -5,7 +5,7 @@ def q1
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  puts names.push("斎藤")
+  puts names << "斎藤"
 end
 
 def q2
@@ -27,7 +27,7 @@ def q4
   sports = ["サッカー", "フットサル", nil, "野球", "バスケ", nil, "バレー"]
 
   # 以下に回答を記載
-  puts sports.delete(nil)
+  sports.nil?
   # 以下は変更しないで下さい
   p sports
 end
