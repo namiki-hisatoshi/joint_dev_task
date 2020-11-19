@@ -53,7 +53,7 @@ def q7
   array = ["1", "2", "3", "4", "5"]
 
   # 以下に回答を記載
-  array.map![$:to_i]
+
   # 以下は変更しないで下さい
   p array
 end
@@ -62,7 +62,7 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  upper_case_programming_languages = programming_languages.upcase
+
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -72,38 +72,27 @@ def q9
   names = ["田中", "佐藤", "佐々木", "高橋"]
 
   # 以下に回答を記載
-  names.each.index_i(1) do |name,i|
-    puts "会員No.#{i} #{name}さん"
-  end
+
 end
 
 def q10
   foods = %w(いか たこ うに しゃけ うにぎり うに軍艦 うに丼)
 
   # 以下に回答を記載
-  foods.each do |food|
-    if food = "うに"
-      puts "好物です"
-    else
-      puts "まぁまぁ好きです"
-    end
 end
 
 def q11
   sports = ["サッカー", "バスケ", "野球", ["フットサル", "野球"], "水泳", "ハンドボール", ["卓球", "サッカー", "ボルダリング"]]
 
   # 以下に回答を記載
-  puts "ユーザーの趣味一覧"
-  sports.each.index_i(1) do |sport,i|
-    puts "No#{i} #{sport}|"
-  end
+
 end
 
 def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-  puts [:name]
+
 end
 
 def q13
