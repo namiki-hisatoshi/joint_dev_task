@@ -62,14 +62,8 @@ def q8
   programming_languages = %w(ruby php python javascript)
 
   # 以下に回答を記載
-  def map_test(programming_languages)
-    programming_languages.map! do |programming_language|
-      programming_language.to_s.capitalize
-    end
-  end
-
-  upper_case_programming_languages = []
-  upper_case_programming_languages = map_test(programming_languages).to_s.upcase
+  programming_languages.map!(&:capitalize)
+  upper_case_programming_languages = programming_languages.map(&:upcase)
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -102,6 +96,9 @@ def q11
 
   # 以下に回答を記載
   puts "ユーザー趣味一覧"
+  sports[3] = "フットサル"
+  sports[6] = "卓球"
+  sports << "ボルダリング"
   sports.each.with_index(1) do |sport,i|
       puts "No#{i} #{sport}"
   end
@@ -156,9 +153,11 @@ def q16
 
   # 以下に回答を記載
   users.each do |user|
-    user.each do |name, age|
-      puts "私の名前は#{name}です。年齢は#{age}歳です。"
-    end
+    p user
+    puts user.class
+  end
+  users[0].each do |name,age|
+    puts "私の名前は#{name}です。年齢は#{age}歳です。"
   end
 end
 
