@@ -63,11 +63,13 @@ def q8
 
   # 以下に回答を記載
   def map_test(programming_languages)
-    programming_languages.map do |programming_language|
-      programming_language.to_s.upcase
+    programming_languages.map! do |programming_language|
+      programming_language.to_s.capitalize
     end
   end
-  upper_case_programming_languages = map_test(programming_languages)
+
+  upper_case_programming_languages = []
+  upper_case_programming_languages = map_test(programming_languages).to_s.upcase
   # 以下は変更しないで下さい
   p programming_languages
   p upper_case_programming_languages
@@ -101,7 +103,7 @@ def q11
   # 以下に回答を記載
   puts "ユーザー趣味一覧"
   sports.each.with_index(1) do |sport,i|
-    puts "No#{i} #{sport}"
+      puts "No#{i} #{sport}"
   end
 end
 
@@ -109,7 +111,7 @@ def q12
   data = { user: { name: "satou", age: 33 } }
 
   # 以下に回答を記載
-
+  puts data[:user][:name]
 end
 
 def q13
@@ -117,14 +119,14 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-
+  puts user_data.merge(update_data)
 end
 
 def q14
   data = { name: "satou", age: 33, address: "saitama", hobby: "soccer", email: "hoge@fuga.com" }
 
   # 以下に回答を記載
-
+  puts array = data.keys
 end
 
 def q15
@@ -132,7 +134,16 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-
+  if data1.keys.include?(:age)
+    puts "NG"
+  else
+    puts "OK"
+  end
+  if data2.keys.include?(:age)
+    puts "NG"
+  else
+    puts "OK"
+  end
 end
 
 def q16
@@ -144,7 +155,11 @@ def q16
   ]
 
   # 以下に回答を記載
-
+  users.each do |user|
+    user.each do |name, age|
+      puts "私の名前は#{name}です。年齢は#{age}歳です。"
+    end
+  end
 end
 
 class UserQ17
