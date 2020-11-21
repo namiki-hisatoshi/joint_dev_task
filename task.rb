@@ -96,9 +96,7 @@ def q11
 
   # 以下に回答を記載
   puts "ユーザー趣味一覧"
-  sports[3] = "フットサル"
-  sports[6] = "卓球"
-  sports << "ボルダリング"
+  sports = sports.flatten.uniq
   sports.each.with_index(1) do |sport,i|
       puts "No#{i} #{sport}"
   end
@@ -116,7 +114,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  puts user_data.merge(update_data)
+  puts user_data.merge!(update_data)
+  p user_data
 end
 
 def q14
@@ -131,16 +130,8 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
-  if data1.keys.include?(:age)
-    puts "NG"
-  else
-    puts "OK"
-  end
-  if data2.keys.include?(:age)
-    puts "NG"
-  else
-    puts "OK"
-  end
+  p data1.keys.include?(:age)? "NG" : "OK"
+  p data2.keys.include?(:age)? "NG" : "OK"
 end
 
 def q16
